@@ -1,6 +1,8 @@
 const gameContainer = document.getElementById('game');
 const gameStart = document.getElementById('start-screen');
 const startBtn = document.querySelector('.btn-start');
+const resetBtn = document.querySelector('.btn-reset');
+const resetContainer = document.getElementById('reset');
 const allCards = gameContainer.childNodes;
 let matchedCards = [];
 let twoCards = [];
@@ -89,7 +91,6 @@ function handleCardClick(e) {
     }
   }
   if (card1.color === card2.color) {
-    console.log("It's a match!");
     card1.isMatched = true;
     card2.isMatched = true;
     matchedCards.push(card1, card2);
@@ -113,6 +114,9 @@ function handleCardClick(e) {
       card2 = null;
     }, 1000);
   }
+  if (matchedCards.length === 10) {
+    resetContainer.style.display = '';
+  }
 }
 
 startBtn.addEventListener('click', function () {
@@ -120,8 +124,18 @@ startBtn.addEventListener('click', function () {
   gameStart.style.display = 'none';
 });
 
+resetBtn.addEventListener('click', function () {
+  shuffle(COLORS);
+  matchedCards = [];
+  for (let card of allCards) {
+    card.style.display = 'none';
+  }
+  createDivsForColors(shuffledColors);
+});
+
 function startGame() {
   gameContainer.style.display = 'none';
+  resetContainer.style.display = 'none';
 }
 
 // when the DOM loads
