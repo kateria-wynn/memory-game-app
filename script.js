@@ -1,4 +1,7 @@
 const gameContainer = document.getElementById('game');
+const cards = [];
+let card1 = null;
+let card2 = null;
 
 const COLORS = [
   'red',
@@ -60,8 +63,19 @@ function createDivsForColors(colorArray) {
 // TODO: Implement this function!
 function handleCardClick(e) {
   const color = e.target.className;
-  if (e.target.tagName === 'DIV') {
-    e.target.style.backgroundColor = `${color}`;
+  if (cards.length === 2) {
+    console.log('2 cards have been clicked!');
+  } else {
+    if (e.target.tagName === 'DIV') {
+      e.target.style.backgroundColor = `${color}`;
+      if (card1 === null && card2 === null) {
+        card1 = e.target.className;
+        cards.push(card1);
+      } else {
+        card2 = e.target.className;
+        cards.push(card2);
+      }
+    }
   }
 }
 
