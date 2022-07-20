@@ -115,19 +115,15 @@ function handleCardClick(e) {
   }
 }
 
-// when the DOM loads
-createDivsForColors(shuffledColors);
-
-// function toggleScreen(toggle) {
-//   let display = toggle ? 'inline-block' : 'none';
-// }
+startBtn.addEventListener('click', function () {
+  gameContainer.style.display = '';
+  gameStart.style.display = 'none';
+});
 
 function startGame() {
-  // toggleScreen(false);
-  console.log('start game');
   gameContainer.style.display = 'none';
 }
 
+// when the DOM loads
 startGame();
-
-/* */
+createDivsForColors(shuffledColors);
