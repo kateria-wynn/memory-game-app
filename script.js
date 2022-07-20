@@ -61,8 +61,7 @@ function createDivsForColors(colorArray) {
     // give it a class attribute for the value we are looping over
     newDiv.classList.add(color);
 
-    newDiv.style.backgroundImage =
-      "url('https://media.istockphoto.com/photos/island-of-kauai-in-hawaii-picture-id1266488959?b=1&k=20&m=1266488959&s=170667a&w=0&h=j9bmvm_mAmRstv3LIZv5xEwsKBnRFMn-iwDRE9vaub8=')";
+    newDiv.style.backgroundImage = "url('70s-retro.jpg')";
 
     // call a function handleCardClick when a div is clicked on
     newDiv.addEventListener('click', handleCardClick);
@@ -115,8 +114,7 @@ function handleCardClick(e) {
           card.classList.contains(card2.color)
         ) {
           card.style.backgroundColor = '';
-          card.style.backgroundImage =
-            "url('https://media.istockphoto.com/photos/island-of-kauai-in-hawaii-picture-id1266488959?b=1&k=20&m=1266488959&s=170667a&w=0&h=j9bmvm_mAmRstv3LIZv5xEwsKBnRFMn-iwDRE9vaub8=')";
+          card.style.backgroundImage = "url('70s-retro.jpg')";
           card.classList.remove('clicked');
         }
       }
