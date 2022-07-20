@@ -61,7 +61,7 @@ function createDivsForColors(colorArray) {
     // give it a class attribute for the value we are looping over
     newDiv.classList.add(color);
 
-    newDiv.style.backgroundImage = "url('70s-retro.jpg')";
+    newDiv.style.backgroundImage = "url('./img/70s-retro.jpg')";
 
     // call a function handleCardClick when a div is clicked on
     newDiv.addEventListener('click', handleCardClick);
@@ -114,7 +114,7 @@ function handleCardClick(e) {
           card.classList.contains(card2.color)
         ) {
           card.style.backgroundColor = '';
-          card.style.backgroundImage = "url('70s-retro.jpg')";
+          card.style.backgroundImage = "url('./img/70s-retro.jpg')";
           card.classList.remove('clicked');
         }
       }
