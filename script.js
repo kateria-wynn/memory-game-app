@@ -119,13 +119,12 @@ createDivsForColors(shuffledColors);
 
 // function toggleScreen(toggle) {
 //   let display = toggle ? 'inline-block' : 'none';
-//   gameContainer.style.display = display;
 // }
 
 function startGame() {
   // toggleScreen(false);
   console.log('start game');
-  gameContainer.style.display = 'none';
+  // gameContainer.style.display = 'none';
 }
 
 startGame();
