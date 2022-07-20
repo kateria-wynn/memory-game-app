@@ -1,4 +1,5 @@
 const gameContainer = document.getElementById('game');
+const gameStart = document.getElementById('start-screen');
 const allCards = gameContainer.childNodes;
 let matchedCards = [];
 let twoCards = [];
@@ -87,6 +88,7 @@ function handleCardClick(e) {
     }
   }
   if (card1.color === card2.color) {
+    console.log("It's a match!");
     card1.isMatched = true;
     card2.isMatched = true;
     matchedCards.push(card1, card2);
@@ -114,5 +116,18 @@ function handleCardClick(e) {
 
 // when the DOM loads
 createDivsForColors(shuffledColors);
+
+// function toggleScreen(toggle) {
+//   let display = toggle ? 'inline-block' : 'none';
+//   gameContainer.style.display = display;
+// }
+
+function startGame() {
+  // toggleScreen(false);
+  console.log('start game');
+  gameContainer.style.display = 'none';
+}
+
+startGame();
 
 /* */
