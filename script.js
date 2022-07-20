@@ -4,11 +4,13 @@ const startBtn = document.querySelector('.btn-start');
 const resetBtn = document.querySelector('.btn-reset');
 const resetContainer = document.getElementById('reset');
 const body = document.querySelector('body');
+const scoreDisplay = document.querySelector('.score-display');
 const allCards = gameContainer.childNodes;
 let matchedCards = [];
 let twoCards = [];
 let card1 = null;
 let card2 = null;
+let score = 0;
 
 const COLORS = [
   'red',
@@ -96,6 +98,8 @@ function handleCardClick(e) {
     card2.isMatched = true;
     matchedCards.push(card1, card2);
     twoCards = [];
+    score++;
+    scoreDisplay.firstElementChild.innerText = ` ${score}`;
     card1 = null;
     card2 = null;
   } else {
@@ -129,11 +133,14 @@ body.addEventListener('click', function (e) {
 });
 
 startBtn.addEventListener('click', function () {
+  scoreDisplay.style.display = '';
   gameContainer.style.display = '';
   gameStart.style.display = 'none';
 });
 
 resetBtn.addEventListener('click', function () {
+  score = 0;
+  scoreDisplay.firstElementChild.innerText = ' 0';
   shuffle(COLORS);
   for (let card of allCards) {
     card.style.display = 'none';
@@ -144,6 +151,7 @@ resetBtn.addEventListener('click', function () {
 function startGame() {
   gameContainer.style.display = 'none';
   resetContainer.style.display = 'none';
+  scoreDisplay.style.display = 'none';
 }
 
 // when the DOM loads
