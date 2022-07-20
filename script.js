@@ -61,6 +61,9 @@ function createDivsForColors(colorArray) {
     // give it a class attribute for the value we are looping over
     newDiv.classList.add(color);
 
+    newDiv.style.backgroundImage =
+      "url('https://media.istockphoto.com/photos/island-of-kauai-in-hawaii-picture-id1266488959?b=1&k=20&m=1266488959&s=170667a&w=0&h=j9bmvm_mAmRstv3LIZv5xEwsKBnRFMn-iwDRE9vaub8=')";
+
     // call a function handleCardClick when a div is clicked on
     newDiv.addEventListener('click', handleCardClick);
 
@@ -71,6 +74,7 @@ function createDivsForColors(colorArray) {
 
 // TODO: Implement this function!
 function handleCardClick(e) {
+  e.target.style.backgroundImage = '';
   const color = e.target.className;
   if (twoCards.length === 2) {
   } else {
@@ -111,6 +115,8 @@ function handleCardClick(e) {
           card.classList.contains(card2.color)
         ) {
           card.style.backgroundColor = '';
+          card.style.backgroundImage =
+            "url('https://media.istockphoto.com/photos/island-of-kauai-in-hawaii-picture-id1266488959?b=1&k=20&m=1266488959&s=170667a&w=0&h=j9bmvm_mAmRstv3LIZv5xEwsKBnRFMn-iwDRE9vaub8=')";
           card.classList.remove('clicked');
         }
       }
