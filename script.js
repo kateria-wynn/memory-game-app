@@ -1,5 +1,6 @@
 const gameContainer = document.getElementById('game');
 const gameStart = document.getElementById('start-screen');
+const startBtn = document.querySelector('.btn-start');
 const allCards = gameContainer.childNodes;
 let matchedCards = [];
 let twoCards = [];
@@ -124,7 +125,7 @@ createDivsForColors(shuffledColors);
 function startGame() {
   // toggleScreen(false);
   console.log('start game');
-  // gameContainer.style.display = 'none';
+  gameContainer.style.display = 'none';
 }
 
 startGame();
