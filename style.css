@@ -18,3 +18,10 @@
   height: 200px;
   margin: 40px;
 }
+#reset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
