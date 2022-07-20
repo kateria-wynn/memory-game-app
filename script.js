@@ -3,6 +3,7 @@ const gameStart = document.getElementById('start-screen');
 const startBtn = document.querySelector('.btn-start');
 const resetBtn = document.querySelector('.btn-reset');
 const resetContainer = document.getElementById('reset');
+const body = document.querySelector('body');
 const allCards = gameContainer.childNodes;
 let matchedCards = [];
 let twoCards = [];
@@ -114,10 +115,18 @@ function handleCardClick(e) {
       card2 = null;
     }, 1000);
   }
+}
+
+body.addEventListener('click', function (e) {
   if (matchedCards.length === 10) {
+    party.confetti(body, {
+      count: party.variation.range(40, 60),
+    });
+    party.confetti(this);
+    matchedCards = [];
     resetContainer.style.display = '';
   }
-}
+});
 
 startBtn.addEventListener('click', function () {
   gameContainer.style.display = '';
@@ -126,7 +135,6 @@ startBtn.addEventListener('click', function () {
 
 resetBtn.addEventListener('click', function () {
   shuffle(COLORS);
-  matchedCards = [];
   for (let card of allCards) {
     card.style.display = 'none';
   }
