@@ -1,5 +1,7 @@
 const gameContainer = document.getElementById('game');
-const cards = [];
+const allCards = gameContainer.childNodes;
+let matchedCards = [];
+let twoCards = [];
 let card1 = null;
 let card2 = null;
 
@@ -62,20 +64,54 @@ function createDivsForColors(colorArray) {
 
 // TODO: Implement this function!
 function handleCardClick(e) {
+  console.log(e);
   const color = e.target.className;
-  if (cards.length === 2) {
+  if (twoCards.length === 2) {
     console.log('2 cards have been clicked!');
   } else {
     if (e.target.tagName === 'DIV') {
       e.target.style.backgroundColor = `${color}`;
       if (card1 === null && card2 === null) {
-        card1 = e.target.className;
-        cards.push(card1);
+        card1 = {
+          color: e.target.className,
+          isMatched: false,
+        };
+        e.target.classList.add('clicked');
+        twoCards.push(card1);
       } else {
-        card2 = e.target.className;
-        cards.push(card2);
+        card2 = {
+          color: e.target.className,
+          isMatched: false,
+        };
+        e.target.classList.add('clicked');
+        twoCards.push(card2);
       }
     }
+  }
+  if (card1.color === card2.color) {
+    card1.isMatched = true;
+    card2.isMatched = true;
+    matchedCards.push(card1, card2);
+    twoCards = [];
+    card1 = null;
+    card2 = null;
+  } else {
+    setTimeout(function () {
+      console.log(card1.color, card2.color);
+      for (let card of allCards) {
+        if (
+          (card.classList.contains('clicked') &&
+            card.classList.contains(card1.color)) ||
+          card.classList.contains(card2.color)
+        ) {
+          card.style.backgroundColor = '';
+          card.classList.remove('clicked');
+        }
+      }
+      twoCards = [];
+      card1 = null;
+      card2 = null;
+    }, 1000);
   }
 }
 
