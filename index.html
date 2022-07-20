@@ -3,17 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <title>Memory Game!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue&family=Fraunces:opsz@9..144&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="start-screen">
       <h1>Memory Game</h1>
-      <button class="btn-start">Start Game</button>
-    </div>
-    <div id="reset">
-      <button class="btn-reset">Reset Game</button>
+      <button class="button-styled btn-start">Start Game</button>
     </div>
     <div class="score-display">Score:<span> 0</span></div>
+    <div id="reset">
+      <button class="button-styled btn-reset">Reset Game</button>
+    </div>
     <div id="game"></div>
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
     <script src="script.js"></script>
