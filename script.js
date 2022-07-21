@@ -74,9 +74,6 @@ function createDivsForColors(colorArray) {
 // TODO: Implement this function!
 function handleCardClick(e) {
   const color = e.target.className;
-  console.log(twoCards);
-  console.log(card1);
-
   if (twoCards.length === 2) {
   } else {
     if (e.target.tagName === 'DIV') {
