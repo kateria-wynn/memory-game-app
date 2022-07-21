@@ -1,7 +1,7 @@
 # Memory Game
 
 For this assignment, I buit a memory game in the browser using HTML, CSS, and JavaScript.
-The goals is to build a card-based memory game from scratch.
+The goals was to build a card-based memory game from scratch.
 
 ## Description
 
