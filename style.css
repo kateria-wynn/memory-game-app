@@ -36,6 +36,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+  gap: 80px;
   perspective: 1000px; /* for adding 3D effect to elements. Gives depth to the gameboard for the card flipping */
 }
 #game div {
